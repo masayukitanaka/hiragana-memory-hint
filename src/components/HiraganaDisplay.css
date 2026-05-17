@@ -1,0 +1,173 @@
+.hiragana-display-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image-display {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hiragana-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: white;
+  padding: 1rem;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-front,
+.card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.card-front {
+  opacity: 1;
+}
+
+.info-card.revealed .card-front {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.card-back {
+  opacity: 0;
+  position: absolute;
+}
+
+.info-card.revealed .card-back {
+  opacity: 1;
+  position: relative;
+}
+
+.card-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+.pronunciation {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.phrase {
+  font-size: 1.25rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.navigation-controls {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.nav-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.nav-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.nav-button:active {
+  transform: translateY(0);
+}
+
+.progress-indicator {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+  min-width: 80px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hiragana-display-main {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .navigation-controls {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .nav-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .progress-indicator {
+    order: -1;
+  }
+}
