@@ -1,7 +1,17 @@
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './App.css'
 
 function App() {
+  const navigate = useNavigate()
+  const [customText, setCustomText] = useState('')
+
+  const handleCustomStart = () => {
+    const trimmed = customText.trim()
+    if (!trimmed) return
+    navigate(`/custom?s=${encodeURIComponent(trimmed)}`)
+  }
+
   return (
     <div className="app-container">
       <header className="header">
@@ -26,6 +36,26 @@ function App() {
               <h3>Random Practice</h3>
               <p>Practice with random characters to test your memory and keep things interesting!</p>
             </Link>
+
+            <div className="mode-card custom-card">
+              <div className="mode-icon">✏️</div>
+              <h3>Custom</h3>
+              <textarea
+                className="custom-textarea"
+                value={customText}
+                onChange={(e) => setCustomText(e.target.value)}
+                placeholder="Type the hiragana you want to practice (e.g. あいうえお). They appear in the order you enter them. Unsupported characters are skipped automatically."
+                rows={4}
+              />
+              <button
+                type="button"
+                className="custom-button"
+                onClick={handleCustomStart}
+                disabled={!customText.trim()}
+              >
+                Start →
+              </button>
+            </div>
           </div>
         </section>
       </main>

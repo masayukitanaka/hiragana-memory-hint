@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.tsx'
 import OneByOne from './pages/OneByOne.tsx'
 import Random from './pages/Random.tsx'
+import Custom from './pages/Custom.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
         <Route path="/one-by-one" element={<OneByOne />} />
         <Route path="/random" element={<Random />} />
+        <Route path="/custom" element={<Custom />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

@@ -101,6 +101,11 @@
   color: #667eea;
 }
 
+.pronunciation-hiragana {
+  font-size: 1.5rem;
+  color: #333;
+}
+
 .phrase {
   font-size: 1.25rem;
   color: #333;

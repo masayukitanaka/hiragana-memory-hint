@@ -53,6 +53,7 @@ function HiraganaDisplay({
           </div>
           <div className="card-back">
             <span className="pronunciation">{currentData.romaji}</span>
+            <span className="pronunciation-hiragana">{currentData.hiragana}</span>
           </div>
         </div>
 
