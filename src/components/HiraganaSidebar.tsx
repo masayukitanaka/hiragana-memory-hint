@@ -22,16 +22,21 @@ function HiraganaSidebar({
         <div className="sidebar-content">
           <h2>Hiragana Table</h2>
           <div className="hiragana-grid">
-            {hiraganaData.map((item, index) => (
-              <button
-                key={index}
-                className={`hiragana-item ${index === currentIndex ? 'current' : ''}`}
-                onClick={() => onCharacterClick(index)}
-              >
-                <span className="hiragana-char">{item.hiragana}</span>
-                <span className="romaji-char">{item.romaji}</span>
-              </button>
-            ))}
+            {hiraganaData.map((item, index) => {
+              const previous = hiraganaData[index - 1]
+              const startsNewRow = previous?.hiragana === 'よ' || previous?.hiragana === 'ヨ'
+              return (
+                <button
+                  key={index}
+                  className={`hiragana-item ${index === currentIndex ? 'current' : ''}`}
+                  style={startsNewRow ? { gridColumnStart: 1 } : undefined}
+                  onClick={() => onCharacterClick(index)}
+                >
+                  <span className="hiragana-char">{item.hiragana}</span>
+                  <span className="romaji-char">{item.romaji}</span>
+                </button>
+              )
+            })}
           </div>
         </div>
       </div>

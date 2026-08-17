@@ -8,6 +8,7 @@ export const katakanaData: HiraganaData[] = [
   { filename: 'IMG_2683.PNG', hiragana: 'ウ', romaji: 'u', phrase: 'Woo! This is heavy.' },
   { filename: 'IMG_2684.PNG', hiragana: 'エ', romaji: 'e', phrase: 'exercise' },
   { filename: 'IMG_2685.PNG', hiragana: 'オ', romaji: 'o', phrase: 'overall' },
+  { filename: 'IMG_2686.PNG', hiragana: 'カ', romaji: 'ka', phrase: 'cup and straw' },
   { filename: 'IMG_2687.PNG', hiragana: 'キ', romaji: 'ki', phrase: 'key' },
   { filename: 'IMG_2688.PNG', hiragana: 'ク', romaji: 'ku', phrase: 'cooking' },
   { filename: 'IMG_2689.PNG', hiragana: 'ケ', romaji: 'ke', phrase: 'Letter "K" is in "OK".' },
